@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-hot-toast';
 
 const Signup = () => {
+    toast.success('Heyyyy')
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 

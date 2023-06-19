@@ -12,8 +12,8 @@ const Product = ({ product }) => {
                 <div className='relative overflow-hidden  h-48 w-52 flex justify-center items-center'>
                     <img className='' src={product.image} alt="" />
 
-                    <div class=" absolute h-full w-full  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <button class="bg-black text-white px-5">Add to cart</button>
+                    <div className=" absolute h-full w-full  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                        <button className="bg-black text-white px-5">Add to cart</button>
                     </div>
                 </div>
             </div>
