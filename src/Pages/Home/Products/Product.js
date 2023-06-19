@@ -9,7 +9,7 @@ const Product = ({ product }) => {
 
         <div className=' mx-auto '>
             <div className=' h-fit group mx-auto'>
-                <div className='relative overflow-hidden border h-48 w-52 flex justify-center items-center'>
+                <div className='relative overflow-hidden  h-48 w-52 flex justify-center items-center'>
                     <img className='' src={product.image} alt="" />
 
                     <div class=" absolute h-full w-full  flex items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
@@ -19,9 +19,9 @@ const Product = ({ product }) => {
             </div>
 
             <h2 className='text-lg'>{product.name}</h2>
-            <h3 className='text-xs text-secondary font-semibold'>${product.price}</h3>
+            <h3 className='text-xs text-secondary font-semibold my-1'>${product.price}</h3>
             <h4 className='text-xs'>{product.rating} ⭐ <span className='text-gray-500'>(55)</span></h4>
-            {/* <button className='text-xs w-full border border-gray-950 rounded-sm px-4 py-[2px] hover:bg-black hover:text-white'>Add To Cart</button> */}
+
         </div >
 
         // <div className=' mx-auto '>
