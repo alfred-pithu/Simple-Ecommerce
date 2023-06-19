@@ -1,7 +1,8 @@
-
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import ProductCard from './ProductCard';
+import { RouterProvider } from 'react-router-dom';
+import router from './Routes/Routes/Routes'
+
 
 function App() {
   const [allProducts, setAllProducts] = useState([]);
@@ -16,14 +17,14 @@ function App() {
       })
   }, [])
 
-  console.log(allProducts)
-
   return (
-    <div className='bg-white text-black h-full'>
+    <div className='max-w-[1440px] mx-auto '>
 
-      {
-        allProducts.map((p) => <ProductCard product={p} key={p._id}></ProductCard>)
-      }
+
+      <RouterProvider router={router}></RouterProvider>
+
+
+
 
     </div>
   );
