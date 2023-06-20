@@ -1,19 +1,9 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
 import Product from './Product';
+import useGetAllProducts from '../../../Custom Hooks/useGetAllProducts';
 
 const Products = () => {
-    const [allProducts, setAllProducts] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/products')
-            .then(res => {
-                setAllProducts(res.data)
-            })
-            .catch(err => {
-                console.error(err)
-            })
-    }, [])
+    // Getting all the product data from the custom hook useGetAllProducts
+    const allProducts = useGetAllProducts()
 
     return (
         <div className='  py-20'>
