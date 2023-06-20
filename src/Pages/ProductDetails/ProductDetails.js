@@ -28,7 +28,7 @@ const ProductDetails = () => {
     }
 
     return (
-        <div className=''>
+        <div className="h-screen">
             <div className="hero  ">
                 <div className="hero-content flex-col lg:flex-row gap-x-40">
 
