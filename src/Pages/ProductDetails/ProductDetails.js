@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import useGetAllProducts from '../../Custom Hooks/useGetAllProducts';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
+import { AuthContext } from '../../context/AuthProvider';
 
 const ProductDetails = () => {
+    const { user } = useContext(AuthContext)
     let { id } = useParams();
     const allProducts = useGetAllProducts();
     const selectedProduct = allProducts.find((p) => p._id === id)
@@ -11,7 +14,17 @@ const ProductDetails = () => {
     const loremText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit officiis corporis qui repudiandae voluptas nisi suscipit odio quo non laudantium';
 
     const addToCart = () => {
-        toast.success(`${selectedProduct.name} has been added to cart`)
+        axios.patch(`http://localhost:5000/users/${user.email}`, { item: JSON.stringify(selectedProduct) })
+            .then(res => {
+                console.log(res.data)
+                toast.success(`${selectedProduct.name} has been added to cart`)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+
+
+
     }
 
     return (
