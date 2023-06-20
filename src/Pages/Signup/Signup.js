@@ -3,10 +3,9 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 import { toast } from 'react-hot-toast';
+import axios from 'axios';
 
 const Signup = () => {
-    toast.success('Heyyyy')
-
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const navigate = useNavigate();
@@ -31,7 +30,17 @@ const Signup = () => {
                         displayName: data.name,
                     }
                     updateUser(userInfo)
-                        .then(() => { })
+                        .then((data) => {
+                            const userDataForDatabase = {
+                                name: user.displayName,
+                                email: user.email
+                            };
+                            axios.post("http://localhost:5000/users", userDataForDatabase)
+                                .then(res => console.log(res.data))
+                                .catch(err => {
+                                    console.error(err)
+                                })
+                        })
                         .catch((err) => {
                             console.log(err)
                         })

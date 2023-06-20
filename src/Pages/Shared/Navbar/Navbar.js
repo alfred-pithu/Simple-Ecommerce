@@ -26,7 +26,7 @@ const Navbar = () => {
             <>
                 <li><Link to='/dashboard'>Dashboard</Link></li>
 
-                <li className='  my-auto'><button onClick={handleLogOut} className='border border-secondary px-3 border-2 rounded-sm hover:bg-secondary hover:text-white ' >Sign Out</button></li>
+                <li className='  my-auto'><button onClick={handleLogOut} className=' border-secondary px-3 border-2 rounded-sm hover:bg-secondary hover:text-white ' >Sign Out</button></li>
             </>
             :
             <li><Link to='/login'>Login</Link></li>}
