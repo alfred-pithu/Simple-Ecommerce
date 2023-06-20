@@ -17,9 +17,10 @@ const TableRow = ({ product }) => {
                 {product.name}
             </td>
             <td>{product?.rating}</td>
-            <th>
-                ${product?.price}
+            <th className='text-secondary'>
+                $ {product?.price}
             </th>
+            <td><button className="btn btn-xs btn-secondary text-white ">X</button></td>
         </tr>
 
     );

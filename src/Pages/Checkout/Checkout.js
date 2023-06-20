@@ -23,6 +23,8 @@ const Checkout = () => {
 
     return (
         <div className="overflow-x-auto h-screen">
+            <h2 className='text-lg mt-3 text-center font-bold '>Products Added to the Cart</h2>
+            <hr className='w-1/3 mx-auto mb-8 mt-2  ' />
             <table className="table">
                 {/* head */}
                 <thead>
@@ -31,6 +33,7 @@ const Checkout = () => {
                         <th>Product Name</th>
                         <th>Rating</th>
                         <th>Price</th>
+                        <th></th>
 
                     </tr>
                 </thead>
