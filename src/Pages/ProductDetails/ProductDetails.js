@@ -1,11 +1,14 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useLocation, useParams } from 'react-router-dom';
 import useGetAllProducts from '../../Custom Hooks/useGetAllProducts';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthProvider';
 
 const ProductDetails = () => {
+    const location = useLocation();
+
+
     const { user } = useContext(AuthContext)
     let { id } = useParams();
     const allProducts = useGetAllProducts();

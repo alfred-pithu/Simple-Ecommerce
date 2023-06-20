@@ -25,8 +25,11 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><a href="/#products">Products</a></li>
         <li><Link to="/checkout">Checkout</Link></li>
+
         {user?.uid ?
             <>
+
+
                 <li><Link to='/dashboard'>Dashboard</Link></li>
 
                 <li className='  my-auto'><button onClick={handleLogOut} className=' border-secondary px-3 border-2 rounded-sm hover:bg-secondary hover:text-white ' >Sign Out</button></li>
