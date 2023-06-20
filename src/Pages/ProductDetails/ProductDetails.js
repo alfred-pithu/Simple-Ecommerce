@@ -26,7 +26,7 @@ const ProductDetails = () => {
                         <h2 className='text-5xl font-bold'>{selectedProduct?.name}</h2>
                         <div className='flex items-center py-6 justify-center lg:justify-start'>
                             <h3 className='text-lg text-secondary font-semibold '>${selectedProduct?.price}</h3>
-                            <h3 className='line-through text-xs text-gray-600 ms-2'>$ {Math.ceil(selectedProduct.price * 1.2)}</h3>
+                            <h3 className='line-through text-xs text-gray-600 ms-2'>$ {Math.ceil(selectedProduct?.price * 1.2)}</h3>
                         </div>
 
                         <div className='flex items-center justify-center lg:justify-start gap-x-6'>

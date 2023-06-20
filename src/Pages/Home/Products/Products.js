@@ -6,7 +6,7 @@ const Products = () => {
     const allProducts = useGetAllProducts()
 
     return (
-        <div className='  py-20'>
+        <div className='py-20' id='products'>
             <h2 className='mb-8 text-xl font-semibold text-center'> <span className='border-b-[3px]  border-[#DB4444]'>All Products</span></h2>
             <div className=' grid grid-cols-1 lg:grid-cols-3 gap-y-20'>
                 {

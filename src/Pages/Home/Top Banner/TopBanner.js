@@ -10,7 +10,7 @@ const TopBanner = () => {
                 <div className='px-3'>
                     <h1 className="text-4xl font-bold">Let the Shopping Begin!</h1>
                     <p className="py-6">Get all your desired products in one place. Explore our products.Choose, place order and relax.</p>
-                    <button className="btn">Get Started</button>
+                    <a href="#products"> <button className="btn">Get Started</button></a>
                 </div>
             </div>
         </div>

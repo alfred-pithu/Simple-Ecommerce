@@ -20,8 +20,8 @@ const Navbar = () => {
 
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
+        <li><a href="/#products">Products</a></li>
         <li><Link to="/checkout">Checkout</Link></li>
-        <li><Link to="/products">Products</Link></li>
         {user?.uid ?
             <>
                 <li><Link to='/dashboard'>Dashboard</Link></li>
