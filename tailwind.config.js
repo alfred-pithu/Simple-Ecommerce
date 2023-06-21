@@ -9,7 +9,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        doctortheme: {
+        ecommercetheme: {
           primary: '#0FCFEC',
           secondary: '#DB4444',
           accent: "#3A4256",

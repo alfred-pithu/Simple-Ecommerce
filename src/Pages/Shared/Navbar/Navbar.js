@@ -6,7 +6,6 @@ import { toast } from 'react-hot-toast';
 const Navbar = () => {
     const navigate = useNavigate();
     const { user, logOut } = useContext(AuthContext);
-    // console.log(user)
 
     const handleLogOut = () => {
         logOut()
@@ -35,13 +34,8 @@ const Navbar = () => {
         }
 
 
-
         {user?.uid ?
             <>
-
-
-
-
                 <li className='  my-auto'><button onClick={handleLogOut} className=' border-secondary px-3 border-2 rounded-sm hover:bg-secondary hover:text-white ' >Sign Out</button></li>
             </>
             :

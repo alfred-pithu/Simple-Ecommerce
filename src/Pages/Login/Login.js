@@ -83,9 +83,6 @@ const Login = () => {
 
                         {errors.email && <p className='text-red-600' role="alert">Please enter a valid email address</p>}
 
-
-
-
                     </div>
 
                     <div className="form-control w-full max-w-xs">
