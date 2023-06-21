@@ -35,7 +35,7 @@ const Signup = () => {
                                 name: user.displayName,
                                 email: user.email
                             };
-                            axios.post("http://localhost:5000/users", userDataForDatabase)
+                            axios.post("https://simple-ecom.onrender.com/users", userDataForDatabase)
                                 .then(res => console.log(res.data))
                                 .catch(err => {
                                     console.error(err)

@@ -5,7 +5,7 @@ const useGetAllProducts = () => {
     const [allProducts, setAllProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/products')
+        axios.get('https://simple-ecom.onrender.com/products')
             .then(res => {
                 setAllProducts(res.data)
             })

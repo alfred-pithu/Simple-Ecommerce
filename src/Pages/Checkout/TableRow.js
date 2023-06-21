@@ -11,7 +11,7 @@ const TableRow = ({ product, setRefetch, refetch }) => {
 
     const deleteProductFromCart = () => {
 
-        axios.patch(`http://localhost:5000/users/${itemId}/cart/${userEmail}`)
+        axios.patch(`https://simple-ecom.onrender.com/users/${itemId}/cart/${userEmail}`)
             .then(res => {
                 if (res) {
                     setRefetch(!refetch)
@@ -23,7 +23,7 @@ const TableRow = ({ product, setRefetch, refetch }) => {
     }
 
     const placeOrder = () => {
-        axios.post(`http://localhost:5000/orders/${itemId}/order/${userEmail}`, product)
+        axios.post(`https://simple-ecom.onrender.com/orders/${itemId}/order/${userEmail}`, product)
             .then(res => {
                 if (res) {
                     setRefetch(!refetch)

@@ -6,7 +6,7 @@ const AdminAllOrder = () => {
     const [allOrders, setAllOrders] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/orders')
+        axios.get('https://simple-ecom.onrender.com/orders')
             .then(res => {
                 setAllOrders(res.data)
             })

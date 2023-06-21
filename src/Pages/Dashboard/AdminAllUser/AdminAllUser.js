@@ -6,7 +6,7 @@ const AdminAllUser = () => {
     const [allUsers, setAllUsers] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:5000/users")
+        axios.get("https://simple-ecom.onrender.com/users")
             .then(res => {
                 setAllUsers(res.data)
             })

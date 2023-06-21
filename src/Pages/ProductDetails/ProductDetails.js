@@ -16,7 +16,7 @@ const ProductDetails = () => {
     const loremText = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit officiis corporis qui repudiandae voluptas nisi suscipit odio quo non laudantium';
 
     const addToCart = () => {
-        axios.patch(`http://localhost:5000/users/${user.email}`, { item: JSON.stringify(selectedProduct) })
+        axios.patch(`https://simple-ecom.onrender.com/users/${user.email}`, { item: JSON.stringify(selectedProduct) })
             .then(res => {
                 console.log(res.data)
                 toast.success(`${selectedProduct.name} has been added to cart`)
