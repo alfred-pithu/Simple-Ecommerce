@@ -26,11 +26,13 @@ const Navbar = () => {
         <li><a href="/#products">Products</a></li>
         <li><Link to="/checkout">Checkout</Link></li>
 
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+
         {user?.uid ?
             <>
 
 
-                <li><Link to='/dashboard'>Dashboard</Link></li>
+
 
                 <li className='  my-auto'><button onClick={handleLogOut} className=' border-secondary px-3 border-2 rounded-sm hover:bg-secondary hover:text-white ' >Sign Out</button></li>
             </>
@@ -57,6 +59,10 @@ const Navbar = () => {
                     {menuItems}
                 </ul>
             </div>
+
+            <label htmlFor="my-drawer-2" tabIndex={2} className="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+            </label>
 
         </div>
     );

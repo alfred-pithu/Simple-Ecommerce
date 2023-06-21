@@ -6,6 +6,9 @@ import Signup from "../../Pages/Signup/Signup";
 import ProductDetails from "../../Pages/ProductDetails/ProductDetails";
 import Checkout from "../../Pages/Checkout/Checkout";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import DashboardLayout from "../../Layout/DashboardLayout";
+import AdminAllOrder from "../../Pages/Dashboard/AdminAllOrder/AdminAllOrder";
+import AdminAllUser from "../../Pages/Dashboard/AdminAllUser/AdminAllUser";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +40,22 @@ const router = createBrowserRouter([
 
 
         ]
+    },
+    {
+        path: '/dashboard',
+        element: <PrivateRoute> <DashboardLayout></DashboardLayout> </PrivateRoute>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <AdminAllOrder></AdminAllOrder>
+            },
+            {
+                path: '/dashboard/allusers',
+                element: <AdminAllUser></AdminAllUser>
+            }
+        ]
     }
+
 ])
 
 export default router;
