@@ -4,6 +4,7 @@ import axios from 'axios';
 import TableRow from './TableRow';
 
 const Checkout = () => {
+    const [refetch, setRefetch] = useState(false)
     const [dbUserCartInfo, setDbUserCartInfo] = useState([])
     const { user } = useContext(AuthContext);
     const userEmail = user?.email;
@@ -17,7 +18,7 @@ const Checkout = () => {
             .catch(err => {
                 console.error(err)
             })
-    }, [])
+    }, [refetch])
 
     // console.log(dbUserCartInfo)
 
@@ -43,7 +44,7 @@ const Checkout = () => {
                         dbUserCartInfo.map((product) => {
                             const parsedProduct = JSON.parse(product)
 
-                            return <TableRow product={parsedProduct} key={parsedProduct._id} ></TableRow>
+                            return <TableRow product={parsedProduct} refetch={refetch} setRefetch={setRefetch} key={parsedProduct._id} ></TableRow>
                         })
                     }
 
