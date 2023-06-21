@@ -24,7 +24,11 @@ const Navbar = () => {
     const menuItems = <React.Fragment>
         <li><Link to="/">Home</Link></li>
         <li><a href="/#products">Products</a></li>
-        <li><Link to="/checkout">Checkout</Link></li>
+
+        {
+            user?.email !== 'admin@gmail.com' && <li><Link to="/checkout">Checkout</Link></li>
+
+        }
 
         {
             user?.email === 'admin@gmail.com' && <li><Link to='/dashboard'>Dashboard</Link></li>

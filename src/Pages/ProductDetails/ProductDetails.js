@@ -72,8 +72,9 @@ const ProductDetails = () => {
                             <h6 className='cursor-pointer text-xs border border-gray-400 rounded-md p-1 hover:bg-secondary hover:text-white hover:border-white'>XL</h6>
 
                         </div>
-
-                        <button onClick={addToCart} className="btn my-5 btn-secondary btn-xs text-white rounded-sm  px-10">Add To Cart</button>
+                        {
+                            user?.email !== 'admin@gmail.com' && <button onClick={addToCart} className="btn my-5 btn-secondary btn-xs text-white rounded-sm  px-10">Add To Cart</button>
+                        }
 
                     </div>
                 </div>

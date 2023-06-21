@@ -60,7 +60,9 @@ const Login = () => {
     const regexValue = /^\S+@\S+$/i;
     return (
         <div className='h-[800px]  flex justify-center items-center '>
+
             <div className='w-96 p-7 shadow-lg' >
+                <h4 className='text-xs mb-5 text-success text-center'> Admin Login - admin@gmail.com  <br /> Password: Pb123456</h4>
                 <h2 className='text-xl text-center'>Login</h2>
 
                 <form onSubmit={handleSubmit(handleLogin)}>

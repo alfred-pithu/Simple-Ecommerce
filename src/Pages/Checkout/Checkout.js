@@ -42,7 +42,7 @@ const Checkout = () => {
                 <tbody>
 
                     {
-                        dbUserCartInfo.map((product) => {
+                        dbUserCartInfo?.map((product) => {
                             const parsedProduct = JSON.parse(product)
 
                             return <TableRow product={parsedProduct} refetch={refetch} setRefetch={setRefetch} key={parsedProduct._id} ></TableRow>
