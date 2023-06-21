@@ -1,17 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import UserRow from './UserRow';
+import useGetAllUsers from '../../../Custom Hooks/useGetAllUsers';
 
 const AdminAllUser = () => {
-    const [allUsers, setAllUsers] = useState([])
 
-    useEffect(() => {
-        axios.get("https://simple-ecom.onrender.com/users")
-            .then(res => {
-                setAllUsers(res.data)
-            })
-            .catch(err => console.error(err))
-    }, [])
+    const allUsers = useGetAllUsers();
 
     return (
         <div className='lg:ms-12 '>

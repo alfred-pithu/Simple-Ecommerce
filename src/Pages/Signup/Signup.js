@@ -138,11 +138,9 @@ const Signup = () => {
 
                 <p className='mt-3'>Already have an account ? <Link className='text-secondary' to={'/login'}>Login </Link></p>
 
-                {/* Divider */}
-                <div className="divider">OR</div>
 
-                {/* Continue With Google Btn */}
-                <button className='btn btn-outline w-full'>CONTINUE WITH GOOGLE</button>
+
+
             </div>
         </div>
     );

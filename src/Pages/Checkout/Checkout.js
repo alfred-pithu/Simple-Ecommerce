@@ -7,13 +7,14 @@ const Checkout = () => {
     const [refetch, setRefetch] = useState(false)
     const [dbUserCartInfo, setDbUserCartInfo] = useState([])
     const { user } = useContext(AuthContext);
-    const userEmail = user?.email;
+    const userEmail = user.email;
     // console.log(userEmail)
 
     useEffect(() => {
-        axios.get(`https://simple-ecom.onrender.com/users/${userEmail}`)
+        axios.get(`http://localhost:5000/users/${userEmail}`)
             .then(res => {
-                setDbUserCartInfo(res.data.cart);
+                setDbUserCartInfo(res?.data?.cart);
+                console.log(res.data)
             })
             .catch(err => {
                 console.error(err)
