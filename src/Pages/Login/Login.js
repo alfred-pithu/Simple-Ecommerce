@@ -3,9 +3,12 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
+import useGetAllUsers from '../../Custom Hooks/useGetAllUsers';
+import axios from 'axios';
 
 
 const Login = () => {
+    const allUsers = useGetAllUsers();
     let location = useLocation();
     const navigate = useNavigate();
 
@@ -47,7 +50,19 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 // The signed-in user info.
-                console.log(user)
+                const userDataExistInDb = allUsers.find(u => u.email === user.email)
+                if (!userDataExistInDb) {
+                    // Saving the new user in the Database and creating a profile in the db
+                    const userDataForDatabase = {
+                        name: user.displayName,
+                        email: user.email
+                    };
+                    axios.post("https://simple-ecom.onrender.com/users", userDataForDatabase)
+                        .then(res => console.log(res.data))
+                        .catch(err => {
+                            console.error(err)
+                        })
+                }
                 navigate(from, { replace: true });
             })
             .catch((error) => {

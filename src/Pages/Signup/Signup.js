@@ -31,6 +31,7 @@ const Signup = () => {
                     }
                     updateUser(userInfo)
                         .then((data) => {
+                            // Saving the new user in the Database and creating a profile in the db
                             const userDataForDatabase = {
                                 name: user.displayName,
                                 email: user.email
