@@ -23,7 +23,7 @@ const TableRow = ({ product, setRefetch, refetch }) => {
     }
 
     const placeOrder = () => {
-        axios.post(`http://localhost:5000/orders/${itemId}/order/${userEmail}`)
+        axios.post(`http://localhost:5000/orders/${itemId}/order/${userEmail}`, product)
             .then(res => {
                 if (res) {
                     setRefetch(!refetch)
