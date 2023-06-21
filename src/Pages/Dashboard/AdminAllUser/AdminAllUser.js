@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import UserRow from './UserRow';
 
 const AdminAllUser = () => {
     const [allUsers, setAllUsers] = useState([])
@@ -8,7 +9,6 @@ const AdminAllUser = () => {
         axios.get("http://localhost:5000/users")
             .then(res => {
                 setAllUsers(res.data)
-                console.log(res.data)
             })
             .catch(err => console.error(err))
     }, [])
@@ -33,7 +33,7 @@ const AdminAllUser = () => {
                     <tbody>
 
                         {
-
+                            allUsers.map((user) => <UserRow key={user._id} user={user}></UserRow>)
                         }
 
                     </tbody>

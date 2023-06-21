@@ -1,12 +1,12 @@
 import React from 'react';
 
-const UserRow = () => {
+const UserRow = ({ user }) => {
     return (
         <tr>
-
-            <td className='text-black'>{ }</td>
-            <td>⭐ { }</td>
-            <th className='text-secondary'> $ { }</th>
+            <td></td>
+            <td className='text-black'>{user._id}</td>
+            <td> {user.email}</td>
+            <th className='text-secondary'> {user.name}</th>
 
         </tr>
 
