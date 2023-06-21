@@ -19,7 +19,7 @@ const Checkout = () => {
             .catch(err => {
                 console.error(err)
             })
-    }, [refetch, userEmail])
+    }, [refetch])
 
     // console.log(dbUserCartInfo)
 
