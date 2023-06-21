@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import OrderRow from './OrderRow';
 
 const AdminAllOrder = () => {
     const [allOrders, setAllOrders] = useState([])
@@ -7,7 +8,6 @@ const AdminAllOrder = () => {
     useEffect(() => {
         axios.get('http://localhost:5000/orders')
             .then(res => {
-                console.log(res.data)
                 setAllOrders(res.data)
             })
             .catch(err => console.error(err))
@@ -34,7 +34,7 @@ const AdminAllOrder = () => {
                 </thead>
                 <tbody>
                     {
-
+                        allOrders.map(order => <OrderRow order={order} key={order._id}></OrderRow>)
                     }
                 </tbody>
             </table>
