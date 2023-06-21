@@ -11,7 +11,7 @@ const Checkout = () => {
     // console.log(userEmail)
 
     useEffect(() => {
-        axios.get(`https://simple-ecom.onrender.com/${userEmail}`)
+        axios.get(`https://simple-ecom.onrender.com/users/${userEmail}`)
             .then(res => {
                 setDbUserCartInfo(res?.data?.cart);
                 console.log(res.data)
@@ -19,7 +19,7 @@ const Checkout = () => {
             .catch(err => {
                 console.error(err)
             })
-    }, [refetch])
+    }, [refetch, userEmail])
 
     // console.log(dbUserCartInfo)
 
