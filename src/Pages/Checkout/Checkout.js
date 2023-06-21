@@ -35,6 +35,7 @@ const Checkout = () => {
                         <th>Rating</th>
                         <th>Price</th>
                         <th></th>
+                        <th></th>
 
                     </tr>
                 </thead>

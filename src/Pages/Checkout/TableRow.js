@@ -6,9 +6,10 @@ import { toast } from 'react-hot-toast';
 const TableRow = ({ product, setRefetch, refetch }) => {
     const { user } = useContext(AuthContext)
 
+    const userEmail = user.email;
+    const itemId = product._id;
+
     const deleteProductFromCart = () => {
-        const userEmail = user.email;
-        const itemId = product._id;
 
         axios.patch(`http://localhost:5000/users/${itemId}/cart/${userEmail}`)
             .then(res => {
@@ -20,6 +21,19 @@ const TableRow = ({ product, setRefetch, refetch }) => {
             .catch(err => console.error(err))
 
     }
+
+    const placeOrder = () => {
+        axios.post(`http://localhost:5000/orders/${itemId}/order/${userEmail}`)
+            .then(res => {
+                if (res) {
+                    setRefetch(!refetch)
+                    toast.success(`Order Placed for ${product.name}`)
+                }
+                console.log(res.data)
+            })
+            .catch(err => console.error(err))
+    }
+
     return (
         <tr>
             <td>
@@ -40,6 +54,7 @@ const TableRow = ({ product, setRefetch, refetch }) => {
                 $ {product?.price}
             </th>
             <td><button onClick={deleteProductFromCart} className="btn btn-xs btn-secondary text-white ">X</button></td>
+            <td><button onClick={placeOrder} className="btn btn-xs btn-success text-white ">Place Oder</button></td>
         </tr>
 
     );

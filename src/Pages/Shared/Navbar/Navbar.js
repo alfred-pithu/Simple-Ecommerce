@@ -26,7 +26,11 @@ const Navbar = () => {
         <li><a href="/#products">Products</a></li>
         <li><Link to="/checkout">Checkout</Link></li>
 
-        <li><Link to='/dashboard'>Dashboard</Link></li>
+        {
+            user?.email === 'admin@gmail.com' && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
+
+
 
         {user?.uid ?
             <>
